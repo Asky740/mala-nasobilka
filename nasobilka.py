@@ -1,24 +1,30 @@
 import random
 
+body = 0
+body = int(body)
+
 def nasobeni(x,y):
     vysledek = x * y
     return vysledek
 
 def vyhodnoceni(vysledek, porovnani):
+
+    global body #kdyz je ve funkci, musi byt global
     if vysledek == porovnani:
         print("hezky")
-        odpoved = True
+        body +=1
     else:
         print("no nevim")
-    return odpoved
 
 for z in range(10):
     x = random.randint(0,10)
     y = random.randint(0,10)
+    vysledek = int(nasobeni(x ,y))
 
     porovnani = input(f"{x} * {y} = ")
+    porovnani = int(porovnani)
 
-
+    vyhodnoceni(vysledek, porovnani)
 
 else:
-  print("konec")
+  print("Vaše body:", body)
